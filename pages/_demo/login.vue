@@ -1,25 +1,46 @@
 <template>
   <div class="container">
     <div class="login">
-      <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" label-position="left" label-width="0px"
-        class="login-form">
+      <el-form
+        ref="loginFormRef"
+        :model="loginForm"
+        :rules="loginRules"
+        label-position="left"
+        label-width="0px"
+        class="login-form"
+      >
         <h3 class="title">后台管理系统</h3>
         <el-form-item prop="userName">
-          <el-input v-model="loginForm.userName" type="text" auto-complete="off" placeholder="账号" />
+          <el-input
+            v-model="loginForm.userName"
+            type="text"
+            auto-complete="off"
+            placeholder="账号"
+          />
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="loginForm.password" type="password" auto-complete="off" placeholder="密码"
-            @keyup.enter="handleLogin(loginFormRef)" />
+          <el-input
+            v-model="loginForm.password"
+            type="password"
+            auto-complete="off"
+            placeholder="密码"
+            @keyup.enter="handleLogin(loginFormRef)"
+          />
         </el-form-item>
-        <el-form-item style="width: 100%;height:300px">
-          <el-button :loading="loading" type="primary" style="width: 100%" @click.prevent="handleLogin(loginFormRef)">
+        <el-form-item style="width: 100%; height: 300px">
+          <el-button
+            :loading="loading"
+            type="primary"
+            style="width: 100%"
+            @click.prevent="handleLogin(loginFormRef)"
+          >
             <span v-if="!loading">登 录</span>
             <span v-else>登 录 中...</span>
           </el-button>
         </el-form-item>
       </el-form>
       <div class="image">
-        <img src="@/public/dongfangmingzhu.jpg" alt="Image"/>
+        <img src="@/public/dongfangmingzhu.jpg" alt="Image" />
       </div>
     </div>
   </div>
@@ -55,7 +76,7 @@ const handleLogin = async (loginFormRef: FormInstance | undefined) => {
             userName: loginForm.userName,
             password: loginForm.password,
           },
-          { callbackUrl: "/_demo/store" },
+          { callbackUrl: "/_demo/store" }
         );
         // navigateTo('/demo/store', { external: true })
       } catch (error) {
@@ -76,34 +97,34 @@ body {
 
 .container {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-  height: 100vh;//表示元素的高度将占据整个视口的高度。
-  background-color:#93939B;
+  height: 100vh; //表示元素的高度将占据整个视口的高度。
+  background-color: #93939b;
 }
 
 .login {
-  display: flex;//表示将元素的显示方式设置为弹性盒子布局。
-  justify-content:center;
+  display: flex; //表示将元素的显示方式设置为弹性盒子布局。
+  justify-content: center;
   align-items: center;
   width: 900px;
   height: 470px;
-  border: 1px solid #93939B; 
+  border: 1px solid #93939b;
   background-color: #ffffff;
 }
 
 .image {
   display: flex;
-  justify-content:flex-end;//将子元素沿主轴朝容器的尾部对齐。
+  justify-content: flex-end; //将子元素沿主轴朝容器的尾部对齐。
   align-items: center;
-  height:380px;
+  height: 380px;
   width: 550px;
   img {
     background-repeat: no-repeat;
     height: 380px;
     width: auto;
-    opacity:0.4;//将元素的透明度设置为 0.4，也就是元素将显示为半透明状态。
-  };
+    opacity: 0.4; //将元素的透明度设置为 0.4，也就是元素将显示为半透明状态。
+  }
 }
 
 .login-form {
@@ -113,11 +134,11 @@ body {
   padding: 25px 25px 5px 25px;
   //border-radius: 0;//将元素的边框圆角设置为 0，即边框是直角的。
 
-.title {
-  margin: 0px auto 15px auto;
-  text-align: center;
-  color: #707070;
-}
+  .title {
+    margin: 0px auto 15px auto;
+    text-align: center;
+    color: #707070;
+  }
 
   .el-input {
     height: 38px;
