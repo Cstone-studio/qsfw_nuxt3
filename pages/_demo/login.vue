@@ -105,7 +105,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; //表示元素的高度将占据整个视口的高度。
-  background-color: #93939b;
+  background-color: black;
 }
 
 .login {
