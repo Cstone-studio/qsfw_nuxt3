@@ -47,8 +47,9 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({ auth: false, layout: "no-layout" });
 import type { FormInstance } from "element-plus";
-const { signIn, status } = useAuth();
+const { signIn, status } = sideBaseUseAuth();
 
 const loading = ref(false);
 const loginFormRef = ref<FormInstance>();
@@ -78,9 +79,13 @@ const handleLogin = async (loginFormRef: FormInstance | undefined) => {
           },
           { callbackUrl: "/_demo/store" }
         );
-        // navigateTo('/demo/store', { external: true })
       } catch (error) {
-        console.error(error);
+        ElNotification({
+          title: "Error",
+          message: "请检查网络连接",
+          type: "error",
+        });
+      } finally {
         loading.value = false;
       }
     } else {
@@ -97,7 +102,7 @@ body {
 
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh; //表示元素的高度将占据整个视口的高度。
   background-color: #93939b;
