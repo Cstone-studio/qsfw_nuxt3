@@ -77,7 +77,7 @@ const handleLogin = async (loginFormRef: FormInstance | undefined) => {
             userName: loginForm.userName,
             password: loginForm.password,
           },
-          { callbackUrl: "/_demo/store" }
+          { callbackUrl: "/_demo/user" },
         );
       } catch (error) {
         ElNotification({
