@@ -8,6 +8,7 @@
       :stripe="true"
       :highlight-current-row="true"
       size="small"
+      width="100%"
       @row-click="rowClick"
     >
       <el-table-column

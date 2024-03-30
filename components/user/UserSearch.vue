@@ -12,21 +12,11 @@
           ></el-input>
         </el-form-item>
       </div>
-      <el-form-item>
-        <el-button
-          type="default"
-          style="margin-bottom: 0px"
-          size="small"
-          @click="onSubmit"
+      <el-form-item style="margin-bottom: 0px">
+        <el-button type="default" size="small" @click="onSubmit"
           >查询
         </el-button>
-        <el-button
-          type="info"
-          style="margin-bottom: 0px"
-          size="small"
-          @click="reset"
-          >重置
-        </el-button>
+        <el-button type="info" size="small" @click="reset">重置 </el-button>
       </el-form-item>
     </div>
   </el-form>
