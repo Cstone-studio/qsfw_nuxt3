@@ -129,6 +129,5 @@ function tableHeadLength(label: string) {
   float: right;
   margin-bottom: 10px;
   margin-right: 10px;
-  size: 5px;
 }
 </style>
