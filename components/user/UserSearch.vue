@@ -2,19 +2,29 @@
   <el-form ref="form" :inline="true" :model="data.form">
     <div style="display: flex">
       <div style="flex: 1">
-        <el-form-item label="关键字">
+        <el-form-item label="关键字" size="small">
           <el-input
             v-model="data.form.keywords"
             style="width: 300px"
-                          placeholder="账号/密码/昵称/电话号/角色/登录token"
-            clearable></el-input>
+            size="small"
+            placeholder="账号/密码/昵称/电话号/角色/登录token"
+            clearable
+          ></el-input>
         </el-form-item>
       </div>
       <el-form-item>
-        <el-button type="default" style="margin-bottom: 0px" @click="onSubmit"
+        <el-button
+          type="default"
+          style="margin-bottom: 0px"
+          size="small"
+          @click="onSubmit"
           >查询
         </el-button>
-        <el-button type="info" style="margin-bottom: 0px" @click="reset"
+        <el-button
+          type="info"
+          style="margin-bottom: 0px"
+          size="small"
+          @click="reset"
           >重置
         </el-button>
       </el-form-item>
@@ -25,8 +35,8 @@
 <script setup lang="ts">
 const data = reactive({
   form: {
-   keywords:'',
-  }
+    keywords: "",
+  },
 });
 
 const userStore = useUserStore();
@@ -35,7 +45,7 @@ onMounted(() => {});
 
 const onSubmit = (e: MouseEvent) => {
   userStore.getUsers(data.form);
-}
+};
 
 const reset = () => {
   userStore.resetParams();

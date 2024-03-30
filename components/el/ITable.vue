@@ -7,6 +7,7 @@
       :height="tableHeight"
       :stripe="true"
       :highlight-current-row="true"
+      size="small"
       @row-click="rowClick"
     >
       <el-table-column
@@ -27,6 +28,7 @@
     <el-pagination
       v-if="pagination"
       style="margin-top: 5px"
+      small
       :total="total"
       :current-page="currentPage"
       :page-size="pageSize"
@@ -126,5 +128,6 @@ function tableHeadLength(label: string) {
   float: right;
   margin-bottom: 10px;
   margin-right: 10px;
+  size: 5px;
 }
 </style>
