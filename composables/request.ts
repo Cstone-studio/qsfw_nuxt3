@@ -51,7 +51,7 @@ const request = async (url: string, params: any, options: RequestOptions) => {
         case 400:
           ElNotification({
             title: "Error",
-            message: "参数不正确",
+            message: "参数不正确:" + response._data,
             type: "error",
           });
           break;
