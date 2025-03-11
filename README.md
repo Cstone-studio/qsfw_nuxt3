@@ -1,3 +1,6 @@
+# 最新版仓库地址：
+https://github.com/gs-prod/gs-vue-framwork-v1.0
+
 # qsfw_nuxt3
 
 基于vue的前端基盘
